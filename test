@@ -1,0 +1,10 @@
+import telebot
+
+bot = telebot.TeleBot("TOKEN")
+
+@bot.message_handler(func=lambda m: True)
+def echo_all(message):
+  bot.reply_to(message, message.text)
+
+while True:
+    bot.polling()
